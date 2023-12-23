@@ -1,8 +1,9 @@
 const express = require("express");
 const { randomBytes } = require("crypto");
-
+const cors = require("cors");
 const app = express();
 app.use(express.json());
+ap;
 
 const posts = {};
 
@@ -21,6 +22,6 @@ app.post("/posts", (req, res) => {
   res.status(201).send(posts[id]);
 });
 
-app.listen(3000, () => {
+app.listen(4000, () => {
   console.log("app is working");
 });
