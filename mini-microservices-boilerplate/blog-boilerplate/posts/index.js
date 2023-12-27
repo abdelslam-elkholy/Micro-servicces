@@ -1,6 +1,8 @@
 const express = require("express");
+
 const { randomBytes } = require("crypto");
 const cors = require("cors");
+const axios = require("axios");
 
 const app = express();
 app.use(express.json());
@@ -39,5 +41,5 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4000, () => {
-  console.log("app is working");
+  console.log("Listening on 4000");
 });

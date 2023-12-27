@@ -1,9 +1,9 @@
 import React from "react";
 
 const CommentList = ({ comments }) => {
-  const renderedComments = comments
-    ? comments.map((c) => <li key={c.id}>{c.content}</li>)
-    : null;
+  const renderedComments = comments.map((comment) => {
+    return <li key={comment.id}>{comment.content}</li>;
+  });
 
   return <ul>{renderedComments}</ul>;
 };
