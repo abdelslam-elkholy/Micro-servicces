@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: blog-boilerplate/moderation
+          image: abdelslam/moderation
           imagePullPolicy: Never
 ---
 apiVersion: v1

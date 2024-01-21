@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: query
-          image: blog-boilerplate/query
+          image: abdelslam/query
           imagePullPolicy: Never
 ---
 apiVersion: v1

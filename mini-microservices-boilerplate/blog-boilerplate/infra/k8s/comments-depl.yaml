@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: blog-boilerplate/comments
+          image: abdelslam/comments
           imagePullPolicy: Never
 ---
 apiVersion: v1
