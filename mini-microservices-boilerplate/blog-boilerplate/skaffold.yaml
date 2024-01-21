@@ -48,3 +48,11 @@ build:
         manual:
           - src: "*.js"
             dest: .
+    - image: abdelslam/moderation
+      context: moderation
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "*.js"
+            dest: .
