@@ -14,8 +14,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: abdelslam/comments
-          imagePullPolicy: Never
+          image: abdelslam/comments-84
 ---
 apiVersion: v1
 kind: Service
