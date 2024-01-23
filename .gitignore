@@ -1,8 +1,2 @@
-mini-microservices-boilerplate/blog-boilerplate/client/node_modules/
-mini-microservices-boilerplate/blog-boilerplate/comments/node_modules/
-mini-microservices-boilerplate/blog-boilerplate/event-bus/node_modules/
-mini-microservices-boilerplate/blog-boilerplate/moderation/node_modules/
-mini-microservices-boilerplate/blog-boilerplate/posts/node_modules/
-mini-microservices-boilerplate/blog-boilerplate/query/node_modules/
-
+**/node_modules/
 
