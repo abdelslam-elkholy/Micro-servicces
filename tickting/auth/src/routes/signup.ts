@@ -1,9 +1,26 @@
-import express from "express";
+import express, { Request, Response } from "express";
+import { body, validationResult } from "express-validator";
 
 const router = express.Router();
 
-router.get("/api/users/signup", (req, res) => {
-  res.send("<h1>Welcome!</h1>");
-});
+router.post(
+  "/api/users/signup",
+  [
+    body("email").isEmail().withMessage("email must be valid"),
+    body("password")
+      .trim()
+      .isLength({ min: 4, max: 20 })
+      .withMessage("password must be"),
+  ],
+  (req: Request, res: Response) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.status(400).send(errors.array());
+    }
+    const { email, password } = req.body;
+    console.log("Creating new user...");
+    res.send({});
+  }
+);
 
 export { router as signupRouter };
