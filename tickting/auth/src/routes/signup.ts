@@ -19,7 +19,7 @@ router.post(
     }
     const { email, password } = req.body;
     console.log("Creating new user...");
-    res.send({});
+    // res.send({});
   }
 );
 
