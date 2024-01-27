@@ -15,7 +15,7 @@ app.get("/api/users/h", (req: Request, res: Response) => {
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
-app.use("/api/users/signup", signupRouter);
+app.use( signupRouter);
 
 app.listen(3000, () => {
   console.log("Listening on port 3000!!!");
