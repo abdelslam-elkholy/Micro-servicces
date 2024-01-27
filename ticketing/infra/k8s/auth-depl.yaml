@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: abdelslam/auth
+          image: rallycoding/auth
 ---
 apiVersion: v1
 kind: Service
