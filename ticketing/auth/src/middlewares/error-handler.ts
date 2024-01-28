@@ -5,4 +5,6 @@ export const errorHandler = (
   req: Request,
   res: Response,
   next: NextFunction
-) => {};
+) => {
+  console.log("Something went wrong ...");
+};
