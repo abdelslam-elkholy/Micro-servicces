@@ -15,7 +15,7 @@ export const errorHandler = (
       }
     });
   } else if (err instanceof DatabaseConnectionError) {
-    res.status(500).json({ errors: [{ message: err.message }] });
+    res.status(500).json({ errors: [{ message: err.reason }] });
   }
   res.status(400).json({ error: err.message });
 };
