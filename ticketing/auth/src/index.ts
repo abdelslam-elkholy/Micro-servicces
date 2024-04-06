@@ -1,5 +1,7 @@
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
+import cookieSession from "cookie-session";
+
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
@@ -8,8 +10,14 @@ import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/notFound-error";
 
 const app = express();
+app.set("trust proxy", true);
 app.use(express.json());
-
+app.use(
+  cookieSession({
+    signed: false,
+    secure: true,
+  })
+);
 app.get("/api/users/h", (req: Request, res: Response) => {
   res.send("Hey");
 });
