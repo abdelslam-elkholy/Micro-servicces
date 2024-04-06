@@ -28,7 +28,10 @@ router.post(
       return res.send({});
     }
 
-    const user = User.create({ email, password });
+    const user = User.build({ email, password });
+    await user.save();
+
+    res.status(201).json({ user });
   }
 );
 
