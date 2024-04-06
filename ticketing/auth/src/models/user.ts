@@ -5,8 +5,8 @@ interface IUser {
   password: string;
 }
 
-interface UserModel extends mongoose.Model<any> {
-  build(attrs: IUser): any;
+interface UserModel extends mongoose.Model<UserDoc> {
+  build(attrs: IUser): UserDoc;
 }
 
 interface UserDoc extends mongoose.Document {
@@ -25,6 +25,6 @@ const userSchema = new mongoose.Schema<IUser>({
   },
 });
 
-const User = mongoose.model<IUser>("User", userSchema);
+const User = mongoose.model<UserDoc, UserModel>("User", userSchema);
 
 export { User, IUser };
