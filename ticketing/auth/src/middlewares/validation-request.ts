@@ -2,7 +2,7 @@ import { RequstValidationError } from "./../errors/request-validation-error";
 import { NextFunction, Request, Response } from "express";
 import { validationResult } from "express-validator";
 
-export const validateRequestm = (
+export const validateRequest = (
   req: Request,
   res: Response,
   next: NextFunction
