@@ -18,14 +18,11 @@ app.use(
     secure: true,
   })
 );
-app.get("/api/users/h", (req: Request, res: Response) => {
-  res.send("Hey");
-});
 
 app.use(currentUserRouter);
-app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
+app.use(signinRouter);
 
 app.get("*", () => {
   throw new NotFoundError();
@@ -34,6 +31,9 @@ app.get("*", () => {
 app.use(errorHandler);
 
 const start = async () => {
+  if (!process.env.JWT_KEY) {
+    throw new Error("JWT_KEY is required");
+  }
   try {
     await mongoose.connect("mongodb://auth-mongo-srv:27017/auth");
     console.log("Connected Successfully To DB");
