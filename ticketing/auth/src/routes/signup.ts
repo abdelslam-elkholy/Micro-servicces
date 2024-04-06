@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { body, validationResult } from "express-validator";
 import { RequstValidationError } from "../errors/request-validation-error";
-import { IUser, User } from "../models/user";
+import { User } from "../models/user";
 
 const router = express.Router();
 
