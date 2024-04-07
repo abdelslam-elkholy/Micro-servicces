@@ -9,7 +9,7 @@ router.get("/api/users/current-user", (req: Request, res: Response) => {
   }
 
   try {
-    const payload = jwt.verify(req.session.jwt, process.env.jwt as string);
+    const payload = jwt.verify(req.session.jwt, process.env.JWT_KEY as string);
     res.send({ currentUser: payload });
   } catch (error) {
     res.send({ currentUser: null });
