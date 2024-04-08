@@ -1,12 +1,11 @@
-import express, { Request, Response } from "express";
+import { NotFoundError } from "./errors/notFound-error";
+import { errorHandler } from "./middlewares/error-handler";
+import express from "express";
 import cookieSession from "cookie-session";
-
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandler } from "./middlewares/error-handler";
-import { NotFoundError } from "./errors/notFound-error";
 
 const app = express();
 app.set("trust proxy", true);
@@ -14,7 +13,7 @@ app.use(express.json());
 app.use(
   cookieSession({
     signed: false,
-    secure: true,
+    secure: process.env.NODE_ENV !== "test",
   })
 );
 
