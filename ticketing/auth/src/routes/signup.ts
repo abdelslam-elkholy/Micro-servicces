@@ -1,10 +1,10 @@
-import { BadRequestError } from "../errors/bad-request-error";
+import { BadRequestError } from "@abdelslamtickits/common";
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import jwt from "jsonwebtoken";
 
 import { User } from "../models/user";
-import { validateRequest } from "../middlewares/validation-request";
+import { validateRequest } from "@abdelslamtickits/common";
 
 const router = express.Router();
 

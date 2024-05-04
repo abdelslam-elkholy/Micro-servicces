@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import { validateRequest } from "./../middlewares/validation-request";
-import { BadRequestError } from "../errors/bad-request-error";
+import { validateRequest } from "@abdelslamtickits/common";
+import { BadRequestError } from "@abdelslamtickits/common";
 import express, { Request, Response } from "express";
 import { body } from "express-validator";
 import { User } from "../models/user";
