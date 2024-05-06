@@ -6,6 +6,7 @@ import {
 import express from "express";
 import cookieSession from "cookie-session";
 import { createTicketRouter } from "./routes/new";
+import { showTcketRouter } from "./routes/show";
 
 const app = express();
 app.set("trust proxy", true);
@@ -21,6 +22,7 @@ app.use(
 app.use(currentUser);
 
 app.use(createTicketRouter);
+app.use(showTcketRouter);
 
 app.all("*", () => {
   throw new NotFoundError();
