@@ -8,6 +8,12 @@ it("has a route handler listening to /api/tickets for post requests", async () =
   expect(response.statusCode).not.toEqual(404);
 });
 
+it("has a route handler listening to /api/tickets for post requests", async () => {
+  const response = await request(app).post("/api/ssss/tickets").send({});
+
+  expect(response.statusCode).toEqual(404);
+});
+
 it("can only be accessed if the user is loggedin ", async () => {
   const response = await request(app).post("/api/tickets").send({}).expect(401);
 });
